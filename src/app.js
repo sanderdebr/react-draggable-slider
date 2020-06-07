@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-// import DragSlider from "../components/DragSlider";
-// import ProjectItem from "../components/ProjectItem";
+import DragSlider from "./components/DragSlider";
+import ProjectItem from "./components/ProjectItem";
 
 export const projectList = [
   {
@@ -26,8 +26,8 @@ export default function Projects(props) {
 
   return (
     <ProjectSection>
-      {/* <DragSlider amount={amount}>
-        <Transition in={visible} timeout={0}>
+      <DragSlider amount={amount}>
+        <Transition>
           {projectList.map(({ title, description }, index) => (
             <ProjectItem
               status={status}
@@ -37,7 +37,7 @@ export default function Projects(props) {
             />
           ))}
         </Transition>
-      </DragSlider> */}
+      </DragSlider>
     </ProjectSection>
   );
 }
