@@ -5,19 +5,12 @@ import DragSlider from "../components/DragSlider";
 import ProjectItem from "../components/ProjectItem";
 
 export default function App(props) {
-  const amount = projectList.length;
-
   return (
-    <Wrapper>
-      <DragSlider amount={amount}>
-        {projectList.map(({ title, description }, index) => (
-          <ProjectItem
-            status={status}
-            title={title}
-            description={description}
-            index={index}
-          />
-        ))}
+    <Wrapper id="projects">
+      <DragSlider>
+        {projectList.map(({ ...props }, index) => {
+          return <ProjectItem {...props} index={index} />;
+        })}
       </DragSlider>
     </Wrapper>
   );

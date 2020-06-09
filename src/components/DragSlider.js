@@ -3,13 +3,14 @@ import { getTransformX } from "../utils/getTransformX";
 import styled from "styled-components";
 import { TweenMax } from "gsap";
 
-const DragSlider = ({ children, amount }) => {
+const DragSlider = ({ children }) => {
   let wrapper = useRef();
   let start = { x: 0, y: 0 };
   let dragging = false;
   let curItem = 0;
   const windowWidth = window.innerWidth;
   let items;
+  let amount = React.Children.count(children);
 
   // List all project items
   useEffect(() => {

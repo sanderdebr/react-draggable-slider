@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styled, { css } from "styled-components";
-// import { RouterButton } from "../components/Button";
+import { LinkButton } from "../components/Button";
 import { useSpring, animated } from "react-spring";
 
 const calc = (x, y) => [
@@ -11,7 +11,7 @@ const calc = (x, y) => [
 const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-const ProjectItem = ({ status, title, description, index }) => {
+const ProjectItem = ({ title, description, image, index }) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: { mass: 5, tension: 350, friction: 40 },
@@ -19,7 +19,6 @@ const ProjectItem = ({ status, title, description, index }) => {
 
   return (
     <Container
-      status={status}
       index={index}
       className="project-item"
       data-id={index}
@@ -32,7 +31,10 @@ const ProjectItem = ({ status, title, description, index }) => {
               set({ xys: calc(x, y) })
             }
             onMouseLeave={() => set({ xys: [0, 0, 1] })}
-            style={{ transform: props.xys.interpolate(trans) }}
+            style={{
+              transform: props.xys.interpolate(trans),
+              backgroundImage: `url(${image})`,
+            }}
           />
         </Left>
         <Right>
@@ -42,7 +44,7 @@ const ProjectItem = ({ status, title, description, index }) => {
           </NumberWrapper>
           <Title>{title}</Title>
           <Description>{description}</Description>
-          <Button left secondary icon="rightArrow" to="/contact">
+          <Button href="#" rel="#" target="_blank">
             View case study
           </Button>
         </Right>
@@ -84,7 +86,10 @@ const Left = styled.div`
     height: 80%;
     background: grey;
     border-radius: 5px;
-    background-image: url(https://insights.digitalpresent.io/wp-content/uploads/2020/03/profile-1.jpg);
+    background-image: ${(props) => {
+      console.log("props image: ", props);
+      return props.image;
+    }};
     background-size: cover;
     background-position: center center;
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
@@ -134,12 +139,12 @@ const Number = styled.h1`
 const NumberTitle = styled.div`
   position: absolute;
   left: 0;
-  top: 7px;
+  top: 0x;
   letter-spacing: 0.5em;
   opacity: 0.4;
 `;
 
-const Button = styled.button`
+const Button = styled(LinkButton)`
   margin-top: 1em;
 `;
 

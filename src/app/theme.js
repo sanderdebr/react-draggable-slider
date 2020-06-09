@@ -22,7 +22,8 @@ export const theme = {
   fontStack: fontStack.join(", "),
   backgroundColor: "#09091f",
   textColor: "#fff",
-  accentColor: "#F4B942",
+  accentColor: "rgb(6, 170, 245)",
+  cursorFollowSize: 100,
 };
 
 export default theme;
