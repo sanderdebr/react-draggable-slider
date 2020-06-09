@@ -52,7 +52,7 @@ const ProjectItem = ({ status, title, description, index }) => {
 };
 
 const Container = styled.div`
-  opacity: 0;
+  opacity: 1;
   height: 100vh;
   max-height: 600px;
   width: 80vw;
@@ -60,12 +60,6 @@ const Container = styled.div`
   padding-left: 140px;
   transition: opacity ease 0.8s 0.8s;
   user-select: none;
-
-  ${(props) =>
-    props.status === "entered" &&
-    css`
-      opacity: 1;
-    `}
 `;
 
 const Content = styled.div`
