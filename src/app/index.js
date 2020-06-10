@@ -9,7 +9,7 @@ export default function App(props) {
     <Wrapper id="projects">
       <DragSlider>
         {projectList.map(({ ...props }, index) => {
-          return <ProjectItem {...props} index={index} />;
+          return <ProjectItem {...props} index={index} key={index} />;
         })}
       </DragSlider>
     </Wrapper>

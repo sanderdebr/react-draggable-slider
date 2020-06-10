@@ -56,14 +56,34 @@ const DragSlider = ({ children }) => {
   }, []);
 
   const handleDown = useCallback((e) => {
-    const { pageX: x, pageY: y } = e;
+    // Determine touch or click
+    let x, y;
+    if (e.type == "touchstart") {
+      const touch =
+        e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+      x = touch.pageX;
+      y = touch.pageY;
+    } else {
+      x = e.pageX;
+      y = e.pageY;
+    }
     start.x = x;
     start.y = y;
     dragging = true;
   }, []);
 
   const handleMove = useCallback((e) => {
-    const { pageX: x, pageY: y } = e;
+    // Determine touch or click
+    let x, y;
+    if (e.type == "touchstart") {
+      const touch =
+        e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+      x = touch.pageX;
+      y = touch.pageY;
+    } else {
+      x = e.pageX;
+      y = e.pageY;
+    }
     // Slide on mouse down and move
     if (dragging) {
       // Get current x value
@@ -76,9 +96,19 @@ const DragSlider = ({ children }) => {
   }, []);
 
   const handleUp = useCallback((e) => {
+    // Determine touch or click
+    let x, y;
+    if (e.type == "touchstart") {
+      const touch =
+        e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+      x = touch.pageX;
+      y = touch.pageY;
+    } else {
+      x = e.pageX;
+      y = e.pageY;
+    }
     dragging = false;
     // On mouse up, slide to next project item
-    const { pageX: x, pageY: y } = e;
     // Determine direction
     let direction = start.x > x ? "right" : "left";
     slide(600, null, direction);
@@ -94,10 +124,10 @@ const DragSlider = ({ children }) => {
     wrapper.current.addEventListener("mouseup", handleUp);
 
     // Mobile touch support
-    // wrapper.current.addEventListener("touchstart", () => {
-    //   alert("start");
-    //   handleDown();
-    // });
+    wrapper.current.addEventListener("touchstart", () => {
+      alert("start");
+      handleDown();
+    });
     wrapper.current.addEventListener("touchmove", () => {
       alert("move");
       handleMove();
