@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback, useState } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import { getTransformX } from "../utils/getTransformX";
 import styled from "styled-components";
 import { TweenMax } from "gsap";
@@ -41,7 +41,6 @@ const DragSlider = ({ children }) => {
 
     // Set boundries
     if (newX > 500) newX = 0;
-    console.log("newX: ", newX);
     if (newX < -windowWidth * amount) newX = getTransformX(wrapper.current);
 
     const durationSeconds = durationMilliseconds / 1000;
@@ -97,9 +96,9 @@ const DragSlider = ({ children }) => {
 
 const Wrapper = styled.div`
   position: absolute;
-  border: 1px solid green;
   display: flex;
   align-items: center;
+  background: rgba(255, 255, 255, 0.05);
 `;
 
 export default DragSlider;

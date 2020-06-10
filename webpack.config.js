@@ -1,4 +1,6 @@
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 var path = require("path");
 
 module.exports = {

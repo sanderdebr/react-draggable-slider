@@ -25,7 +25,7 @@ export const LinkButton = (props) => {
 const ButtonContainer = styled.button`
   background: none;
   height: 46px;
-  padding: "0 24px";
+  padding: "0 19px";
   border: 0;
   margin: 0;
   cursor: pointer;
@@ -83,7 +83,7 @@ const ButtonText = styled.span`
   text-transform: uppercase;
   letter-spacing: ${(props) => props.theme.letterSpacing};
   opacity: 0.85;
-  padding: 0 24px;
+  padding: 0 19px;
   color: ${(props) => props.theme.textColor};
 `;
 

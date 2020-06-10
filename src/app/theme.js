@@ -14,15 +14,28 @@ const fontStack = [
   "sans-serif",
 ];
 
-export const theme = {
+const responsive = {
   desktop: 1600,
-  fontSize: "18px",
-  letterSpacing: "0.04em",
-  lineHeight: "31px",
+  tablet: 1024,
+};
+
+const fonts = {
+  fontSize: "17px",
+  letterSpacing: "0.01em",
+  lineHeight: "28px",
   fontStack: fontStack.join(", "),
+};
+
+const colors = {
   backgroundColor: "#09091f",
   textColor: "#fff",
   accentColor: "rgb(6, 170, 245)",
+};
+
+export const theme = {
+  ...responsive,
+  ...fonts,
+  ...colors,
   cursorFollowSize: 100,
 };
 

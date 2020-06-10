@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import { LinkButton } from "../components/Button";
 import { useSpring, animated } from "react-spring";
 
@@ -14,7 +14,7 @@ const trans = (x, y, s) =>
 const ProjectItem = ({ title, description, image, index }) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
-    config: { mass: 5, tension: 350, friction: 40 },
+    config: { mass: 10, tension: 350, friction: 40 },
   }));
 
   return (
@@ -26,7 +26,9 @@ const ProjectItem = ({ title, description, image, index }) => {
     >
       <Content>
         <Left>
-          <animated.div
+          <AnimatedDiv
+            as={animated.div}
+            className="AnimatedDiv"
             onMouseMove={({ clientX: x, clientY: y }) =>
               set({ xys: calc(x, y) })
             }
@@ -58,49 +60,62 @@ const Container = styled.div`
   height: 100vh;
   max-height: 600px;
   width: 80vw;
-  border: 1px solid purple;
   padding-left: 140px;
   transition: opacity ease 0.8s 0.8s;
   user-select: none;
+
+  @media (max-width: ${(props) => props.theme.tablet}px) {
+    width: 100%;
+    padding-left: 0;
+  }
 `;
 
 const Content = styled.div`
   padding-left: 4em;
   height: 100%;
-  border: 1px solid purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: ${(props) => props.theme.tablet}px) {
+    &:hover {
+      .AnimatedDiv {
+        filter: grayscale(0%) brightness(0.8);
+      }
+    }
+  }
+`;
+
+const Left = styled.div`
+  width: 100%;
+  height: 90%;
+  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const Left = styled.div`
-  width: 100%;
-  height: 100%;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const AnimatedDiv = styled.div`
+  width: 300px;
+  height: 80%;
+  background: grey;
+  border-radius: 5px;
+  background-image: ${(props) => props.image};
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
+  will-change: transform;
+  border: none;
 
-  div {
-    width: 300px;
-    height: 80%;
-    background: grey;
-    border-radius: 5px;
-    background-image: ${(props) => {
-      console.log("props image: ", props);
-      return props.image;
-    }};
-    background-size: cover;
-    background-position: center center;
-    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.5s;
-    will-change: transform;
-    border: none;
+  @media (min-width: ${(props) => props.theme.desktop}px) {
+    width: 400px;
+    height: 100%;
+  }
 
-    @media (min-width: ${(props) => props.theme.desktop}px) {
-      width: 400px;
-      height: 100%;
-    }
+  @media (max-width: ${(props) => props.theme.tablet}px) {
+    transition: 400ms ease-in-out filter;
+    filter: grayscale(50%) brightness(0.5);
   }
 `;
 
@@ -109,17 +124,36 @@ const Right = styled.div`
   height: 100%;
   flex-grow: 1;
   padding: 6rem 2rem;
+
+  @media (max-width: ${(props) => props.theme.tablet}px) {
+    margin-left: -255px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 44px;
-  margin: 3rem 0;
+  margin: 2rem 0;
+  position: relative;
+  line-height: 1.2em;
+
+  @media (max-width: ${(props) => props.theme.tablet}px) {
+    margin: 1em 0;
+  }
 `;
 
 const Description = styled.p`
   font-size: ${(props) => props.theme.fontSize};
   letter-spacing: ${(props) => props.theme.letterSpacing};
   line-height: ${(props) => props.theme.lineHeight};
+
+  @media (max-width: ${(props) => props.theme.tablet}px) {
+    display: none;
+  }
 `;
 
 const NumberWrapper = styled.div`
