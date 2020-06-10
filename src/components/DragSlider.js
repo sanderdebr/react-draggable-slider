@@ -125,16 +125,13 @@ const DragSlider = ({ children }) => {
 
     // Mobile touch support
     wrapper.current.addEventListener("touchstart", () => {
-      alert("start");
       handleDown();
     });
     wrapper.current.addEventListener("touchmove", () => {
-      alert("move");
       handleMove();
     });
     wrapper.current.addEventListener("touchend", () => {
       handleUp();
-      alert("end");
     });
 
     // Cleanup
