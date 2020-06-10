@@ -8,15 +8,20 @@ const DragSlider = ({ children }) => {
   let start = { x: 0, y: 0 };
   let dragging = false;
   let curItem = 0;
-  const windowWidth = window.innerWidth;
+  let windowWidth = window.innerWidth;
   let items;
   let amount = React.Children.count(children);
 
-  // List all project items
+  // List all project items when component is ready
   useEffect(() => {
-    amount = amount - 1;
+    amount--;
     items = Array.from(document.querySelectorAll(".project-item"));
   }, []);
+
+  // Handle resize
+  const handleResize = () => {
+    windowWidth = window.innerWidth;
+  };
 
   // Tween with gsap
   const slide = useCallback((durationMilliseconds, newX, direction) => {
@@ -79,12 +84,31 @@ const DragSlider = ({ children }) => {
     slide(600, null, direction);
   }, []);
 
+  // Startup
   useEffect(() => {
     slide();
 
+    window.addEventListener("resize", handleResize);
     wrapper.current.addEventListener("mousedown", handleDown);
     wrapper.current.addEventListener("mousemove", handleMove);
     wrapper.current.addEventListener("mouseup", handleUp);
+
+    // Mobile touch support
+    wrapper.current.addEventListener("touchstart", handleDown);
+    wrapper.current.addEventListener("touchmove", handleMove);
+    wrapper.current.addEventListener("touchend", handleUp);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      wrapper.current.removeEventListener("mousedown", handleDown);
+      wrapper.current.removeEventListener("mousemove", handleMove);
+      wrapper.current.removeEventListener("mouseup", handleUp);
+
+      wrapper.current.removeEventListener("touchstart", handleDown);
+      wrapper.current.removeEventListener("touchmove", handleMove);
+      wrapper.current.removeEventListener("touchend", handleUp);
+    };
   }, [handleDown, handleMove, handleUp, slide]);
 
   return (

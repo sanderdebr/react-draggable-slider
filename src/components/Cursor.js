@@ -1,32 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import styled, { useTheme } from "styled-components";
 import { isDescendant } from "../utils/isDescendant";
+import { cursorFollowGrow, cursorFollowShrink } from "../utils/handleCursor";
 
 const Cursor = () => {
   const cursorFollow = useRef();
   const cursorSmall = useRef();
   const cursorText = useRef();
   const theme = useTheme();
-
-  const cursorFollowGrow = () => {
-    cursorFollow.current.style.width = `${theme.cursorFollowSize}px`;
-    cursorFollow.current.style.height = `${theme.cursorFollowSize}px`;
-    cursorFollow.current.style.top = `-${theme.cursorFollowSize / 2}px`;
-    cursorFollow.current.style.left = `-${theme.cursorFollowSize / 2}px`;
-    cursorText.current.style.opacity = 1;
-    cursorText.current.style.left = "0";
-    cursorText.current.style.top = "20px";
-  };
-
-  const cursowFollowShrink = (size) => {
-    cursorFollow.current.style.width = `${size}px`;
-    cursorFollow.current.style.height = `${size}px`;
-    cursorFollow.current.style.top = `-${size / 2}px`;
-    cursorFollow.current.style.left = `-${size / 2}px`;
-    cursorText.current.style.opacity = 0;
-    cursorText.current.style.left = "0px";
-    cursorText.current.style.top = "0px";
-  };
 
   const onMouseMove = (event) => {
     const {
@@ -42,11 +23,15 @@ const Cursor = () => {
     cursorSmall.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     cursorFollow.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     cursorText.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    cursowFollowShrink(30);
+    cursorFollowShrink(cursorFollow.current, cursorText.current, 30);
 
     // Hovering projects section
     if (isDescendant("projects", event.target, true)) {
-      cursorFollowGrow();
+      cursorFollowGrow(
+        cursorFollow.current,
+        cursorText.current,
+        theme.cursorFollowSize
+      );
       document.body.style.cursor = "grab";
     }
 
@@ -57,7 +42,11 @@ const Cursor = () => {
       tagName === "circle" ||
       tagName === "svg"
     ) {
-      cursorFollowGrow();
+      cursorFollowGrow(
+        cursorFollow.current,
+        cursorText.current,
+        theme.cursorFollowSize
+      );
       cursorText.current.style.opacity = 0;
       cursorSmall.current.style.backgroundColor = theme.secondaryAccentColor;
     }
