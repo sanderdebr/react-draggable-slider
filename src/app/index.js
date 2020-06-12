@@ -5,9 +5,15 @@ import { projectList } from "./data";
 import DragSlider from "../components/DragSlider";
 
 export default function App(props) {
+  const berend = {};
   return (
     <Wrapper id="projects">
-      <DragSlider data={projectList} />
+      <DragSlider
+        data={projectList}
+        speed={1200}
+        easing={"back"}
+        bgColor="rgba(255, 255, 255, 0.05)"
+      />
     </Wrapper>
   );
 }
