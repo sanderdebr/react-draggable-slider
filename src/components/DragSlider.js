@@ -3,14 +3,16 @@ import { getTransformX } from "../utils/getTransformX";
 import styled from "styled-components";
 import { TweenMax } from "gsap";
 
-const DragSlider = ({ children }) => {
+import ProjectItem from "../components/ProjectItem";
+
+const DragSlider = ({ data }) => {
   let wrapper = useRef();
   let start = { x: 0, y: 0 };
   let dragging = false;
   let curItem = 0;
   let windowWidth = window.innerWidth;
   let items;
-  let amount = React.Children.count(children);
+  let amount = data.length;
 
   // List all project items when component is ready
   useEffect(() => {
@@ -59,8 +61,7 @@ const DragSlider = ({ children }) => {
     // Determine touch or click
     let x, y;
     if (e.type == "touchstart") {
-      const touch =
-        e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+      const touch = e.touches[0] || e.changedTouches[0];
       x = touch.pageX;
       y = touch.pageY;
     } else {
@@ -75,9 +76,8 @@ const DragSlider = ({ children }) => {
   const handleMove = useCallback((e) => {
     // Determine touch or click
     let x, y;
-    if (e.type == "touchstart") {
-      const touch =
-        e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+    if (e.type == "touchmove") {
+      const touch = e.touches[0] || e.changedTouches[0];
       x = touch.pageX;
       y = touch.pageY;
     } else {
@@ -98,9 +98,8 @@ const DragSlider = ({ children }) => {
   const handleUp = useCallback((e) => {
     // Determine touch or click
     let x, y;
-    if (e.type == "touchstart") {
-      const touch =
-        e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+    if (e.type == "touchdown") {
+      const touch = e.touches[0] || e.changedTouches[0];
       x = touch.pageX;
       y = touch.pageY;
     } else {
@@ -143,7 +142,9 @@ const DragSlider = ({ children }) => {
 
   return (
     <Wrapper style={{ transform: "translate3d(0, 0, 0)" }} ref={wrapper}>
-      {children}
+      {data.map(({ ...props }, index) => {
+        return <ProjectItem {...props} index={index} key={index} />;
+      })}
     </Wrapper>
   );
 };

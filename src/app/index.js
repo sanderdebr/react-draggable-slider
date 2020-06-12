@@ -1,17 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { projectList } from "./data";
+
 import DragSlider from "../components/DragSlider";
-import ProjectItem from "../components/ProjectItem";
 
 export default function App(props) {
   return (
     <Wrapper id="projects">
-      <DragSlider>
-        {projectList.map(({ ...props }, index) => {
-          return <ProjectItem {...props} index={index} key={index} />;
-        })}
-      </DragSlider>
+      <DragSlider data={projectList} />
     </Wrapper>
   );
 }

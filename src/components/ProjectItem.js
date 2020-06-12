@@ -115,7 +115,7 @@ const AnimatedDiv = styled.div`
 
   @media (max-width: ${(props) => props.theme.tablet}px) {
     transition: 400ms ease-in-out filter;
-    filter: grayscale(50%) brightness(0.5);
+    filter: grayscale(70%) brightness(0.3);
   }
 `;
 
