@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { TweenMax, Power1, Back, Elastic, Expo } from "gsap";
 import PropTypes from "prop-types";
 
-import ProjectItem from "../components/ProjectItem";
+import ProjectItem from "./ProjectItem";
 
-const DragSlider = ({
+const Slider = ({
   data = [],
   speed = 500,
   easing = null,
@@ -182,6 +182,8 @@ const DragSlider = ({
     };
   }, [handleDown, handleMove, handleUp, slide]);
 
+  console.log("SLIDER DATA: ", data);
+
   return (
     <Wrapper
       style={{ transform: "translate3d(0, 0, 0)" }}
@@ -202,8 +204,8 @@ const Wrapper = styled.div`
   background: ${(props) => props.bgColor};
 `;
 
-DragSlider.propTypes = {
+Slider.propTypes = {
   data: PropTypes.array,
 };
 
-export default DragSlider;
+export default Slider;

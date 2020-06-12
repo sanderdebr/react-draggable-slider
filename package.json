@@ -2,7 +2,7 @@
   "name": "react-draggable-slider",
   "version": "1.0.0",
   "description": "Smooth draggable React slider for project items using Spring and GSAP",
-  "main": "src/index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development"
@@ -29,6 +29,7 @@
   "homepage": "https://github.com/sanderdebr/react-draggable-slider#readme",
   "devDependencies": {
     "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
     "babel-loader": "^8.1.0",

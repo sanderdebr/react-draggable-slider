@@ -1,20 +1,24 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { ThemeProvider, createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
-import App from "./app/";
-import Cursor from "./components/Cursor";
-import { theme } from "./app/theme";
-import { GlobalStyles } from "./app/styles";
-import isEdge from "./utils/isEdge";
+import Slider from "./components/Slider";
 
-ReactDOM.render(
-  <>
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      {!isEdge && <Cursor />}
-      <App />
-    </ThemeProvider>
-  </>,
-  document.getElementById("root")
-);
+export const App = (props) => {
+  const { data, speed, easing, bgColor } = props;
+  return (
+    <Wrapper id="projects">
+      <Slider data={data} speed={speed} easing={easing} bgColor={bgColor} />
+    </Wrapper>
+  );
+};
+
+const Wrapper = styled.section`
+  width: auto;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+
+export default App;
