@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
-import { ThemeProvider, createGlobalStyle } from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 import App from "./";
 import Cursor from "./components/Cursor";
@@ -11,12 +11,12 @@ import isEdge from "./utils/isEdge";
 import { projectList } from "./app/data";
 
 ReactDOM.render(
-  <>
+  <Fragment>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       {!isEdge && <Cursor />}
       <App data={projectList} />
     </ThemeProvider>
-  </>,
+  </Fragment>,
   document.getElementById("root")
 );
