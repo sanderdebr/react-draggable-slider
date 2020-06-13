@@ -71,7 +71,6 @@ The sliderSettings prop in `<Slider sliderSettings={sliderSettings} />` componen
 
 | Name              | Type                                | Description                                                                                                                                                                                                                                | Default Value                     |
 | ----------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
-| `children`        | `node`                              | elements you should pass to the slider and that will be considered as slides                                                                                                                                                               | Required       
 | `data`        | `array`       | array of slider items, see below which structure you may use       | `[]`     
 | `speed`    | `number`    | speed of sliding to next item when dragged in milliseconds   | 3000 (3 seconds)         
 | `easing` | `string`    | 4 available GSAP easings to animate the sliding: "power", "back", "elastic", "expo".   | ease   
