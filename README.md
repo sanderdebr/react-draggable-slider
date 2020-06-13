@@ -1,4 +1,5 @@
 # react-draggable-slider
+
 ![GitHub](https://img.shields.io/github/license/dbismut/react-soft-slider)
 
 <p align="left">NPM package for my custom Draggable React Slider using React Spring and GSAP.</p>
@@ -14,33 +15,20 @@ npm install react-draggable-slider --save-dev
 Add `<Slider />` component with sliderSettings object, the only required setting an array of slider items.
 
 ```jsx
-import { Slider } from 'react-soft-slider'
-
-const sliderSettings = {
-  data: projectList,
-  speed: 3000,
-  easing: "elastic",
-  bgColor: "rgba(255, 255, 255, 0.05)",
-  buttonHref: "https://www.google.com",
-  buttonTarget: "_self",
-  buttonText: "View project",
-  showButton: true,
-};
+import { Slider } from "react-soft-slider";
 
 function App() {
-  const [index, setIndex] = React.useState(0)
-
-  return (
-    <Slider
-      index={index}
-      onIndexChange={setIndex}
-      style={{ width: 400, height: 200 }}
-    >
-      {slides.map((color, i) => (
-        <div key={i} style={{ ...style, background: color }} />
-      ))}
-    </Slider>
-  )
+  const sliderSettings = {
+    data: projectList,
+    speed: 3000,
+    easing: "elastic",
+    bgColor: "rgba(255, 255, 255, 0.05)",
+    buttonHref: "https://www.google.com",
+    buttonTarget: "_self",
+    buttonText: "View project",
+    showButton: true,
+  };
+  return <App sliderSettings={sliderSettings} />;
 }
 ```
 
@@ -51,15 +39,13 @@ export const projectList = [
   {
     title: "Cutting Edge Project",
     image: "https://source.unsplash.com/collection/347317/",
-    description:
-      "Praesent quis congue nisi...",
+    description: "Praesent quis congue nisi...",
   },
   {
     title: "Featured Artist 3D",
     image: "https://source.unsplash.com/collection/3573299/",
-    description:
-      "Duis at tellus vitae velit aliquet varius...",
-  }
+    description: "Duis at tellus vitae velit aliquet varius...",
+  },
 ];
 ```
 
@@ -69,19 +55,21 @@ export const projectList = [
 
 The sliderSettings prop in `<Slider sliderSettings={sliderSettings} />` component accepts the following props:
 
-| Name              | Type                                | Description                                                                                                                                                                                                                                | Default Value                     |
-| ----------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
-| `data`        | `array`       | array of slider items, see below which structure you may use       | `[]`     
-| `speed`    | `number`    | speed of sliding to next item when dragged in milliseconds   | 3000 (3 seconds)         
-| `easing` | `string`    | 4 available GSAP easings to animate the sliding: "power", "back", "elastic", "expo".   | ease   
-| `bgColor`    | `string`     | Set background-color of the whole slider, accepts HEX and RGB(A). |  `rgba(255, 255, 255, 0.05)`  
-| `buttonText` | `string`     | Text inside button per item    | `View case study`        
-| `showButton` | `boolean`     | If a button should be shown for all items    | `true`     
+| Name         | Type      | Description                                                                          | Default Value               |
+| ------------ | --------- | ------------------------------------------------------------------------------------ | --------------------------- |
+| `data`       | `array`   | array of slider items, see below which structure you may use                         | `[]`                        |
+| `speed`      | `number`  | speed of sliding to next item when dragged in milliseconds                           | 3000 (3 seconds)            |
+| `easing`     | `string`  | 4 available GSAP easings to animate the sliding: "power", "back", "elastic", "expo". | ease                        |
+| `bgColor`    | `string`  | Set background-color of the whole slider, accepts HEX and RGB(A).                    | `rgba(255, 255, 255, 0.05)` |
+| `buttonText` | `string`  | Text inside button per item                                                          | `View case study`           |
+| `showButton` | `boolean` | If a button should be shown for all items                                            | `true`                      |
 
 ### Using
+
 - React Spring
 - GSAP
 - Styled Components
 
 ### Demo
+
 https://sanderdebr.github.io/react-draggable-slider/
