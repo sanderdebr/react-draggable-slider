@@ -58,7 +58,7 @@ export const projectList = [
     title: "Featured Artist 3D",
     image: "https://source.unsplash.com/collection/3573299/",
     description:
-      "Duis at tellus vitae velit aliquet varius. Fusce luctus libero et ligula tristique lobortis. Vestibulum eu placerat risus, eu semper augue. Integer at purus sit amet elit pretium viverra. Suspendisse id fringilla nibh, nec dictum urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. ",
+      "Duis at tellus vitae velit aliquet varius...",
   }
 ];
 ```
