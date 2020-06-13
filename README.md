@@ -71,10 +71,7 @@ The sliderSettings prop in `<Slider sliderSettings={sliderSettings} />` componen
 
 | Name              | Type                                | Description                                                                                                                                                                                                                                | Default Value                     |
 | ----------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
-
-| `data`        | `array`       | array of slider items, see below which structure you may use       | `[]`     |
-
-
+| `children`        | `node`                              | elements you should pass to the slider and that will be considered as slides                                                                                                                                                               | Required       
 
 ### Using
 - React Spring
