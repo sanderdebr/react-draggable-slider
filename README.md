@@ -73,7 +73,11 @@ The sliderSettings prop in `<Slider sliderSettings={sliderSettings} />` componen
 | ----------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
 | `children`        | `node`                              | elements you should pass to the slider and that will be considered as slides                                                                                                                                                               | Required       
 | `data`        | `array`       | array of slider items, see below which structure you may use       | `[]`     
-
+| `speed`    | `number`    | speed of sliding to next item when dragged in milliseconds   | 3000 (3 seconds)         
+| `easing` | `string`    | 4 available GSAP easings to animate the sliding: "power", "back", "elastic", "expo".   | ease   
+| `bgColor`    | `string`     | Set background-color of the whole slider, accepts HEX and RGB(A). |  `rgba(255, 255, 255, 0.05)`  
+| `buttonText` | `string`     | Text inside button per item    | `View case study`        
+| `showButton` | `boolean`     | If a button should be shown for all items    | `true`     
 
 ### Using
 - React Spring
