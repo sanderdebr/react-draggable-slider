@@ -10,12 +10,23 @@ import isEdge from "./utils/isEdge";
 
 import { projectList } from "./app/data";
 
+const sliderSettings = {
+  data: projectList,
+  speed: 3000,
+  easing: "elastic",
+  bgColor: "rgba(255, 255, 255, 0.05)",
+  buttonHref: "https://www.google.com",
+  buttonTarget: "_self",
+  buttonText: "View project",
+  showButton: true,
+};
+
 ReactDOM.render(
   <Fragment>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       {!isEdge && <Cursor />}
-      <App data={projectList} />
+      <App sliderSettings={sliderSettings} />
     </ThemeProvider>
   </Fragment>,
   document.getElementById("root")

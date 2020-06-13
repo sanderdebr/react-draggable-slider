@@ -3,14 +3,11 @@ import styled from "styled-components";
 
 import Slider from "./components/Slider";
 
-export const App = (props) => {
-  const { data, speed, easing, bgColor } = props;
-  return (
-    <Wrapper id="projects">
-      <Slider data={data} speed={speed} easing={easing} bgColor={bgColor} />
-    </Wrapper>
-  );
-};
+export const App = ({ sliderSettings }) => (
+  <Wrapper id="projects">
+    <Slider sliderSettings={sliderSettings} />
+  </Wrapper>
+);
 
 const Wrapper = styled.section`
   width: auto;

@@ -11,7 +11,16 @@ const calc = (x, y) => [
 const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-const ProjectItem = ({ title, description, image, index }) => {
+const ProjectItem = ({
+  title,
+  description,
+  image,
+  showButton,
+  buttonHref,
+  buttonTarget,
+  buttonText,
+  index,
+}) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: { mass: 10, tension: 350, friction: 40 },
@@ -46,9 +55,11 @@ const ProjectItem = ({ title, description, image, index }) => {
           </NumberWrapper>
           <Title>{title}</Title>
           <Description>{description}</Description>
-          <Button href="#" rel="#" target="_blank">
-            View case study
-          </Button>
+          {showButton && (
+            <Button href={buttonHref} rel="#" target={buttonTarget}>
+              {buttonText}
+            </Button>
+          )}
         </Right>
       </Content>
     </Container>

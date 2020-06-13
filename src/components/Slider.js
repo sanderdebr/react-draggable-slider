@@ -7,10 +7,16 @@ import PropTypes from "prop-types";
 import ProjectItem from "./ProjectItem";
 
 const Slider = ({
-  data = [],
-  speed = 500,
-  easing = null,
-  bgColor = "rgba(255, 255, 255, 0.05)",
+  sliderSettings: {
+    data = [],
+    speed = 500,
+    easing = null,
+    bgColor = "rgba(255, 255, 255, 0.05)",
+    showButton = true,
+    buttonHref = "#",
+    buttonTarget = "_blank",
+    buttonText = "View case study",
+  },
 }) => {
   // Check for exceptions
   if (!data.length) {
@@ -182,8 +188,6 @@ const Slider = ({
     };
   }, [handleDown, handleMove, handleUp, slide]);
 
-  console.log("SLIDER DATA: ", data);
-
   return (
     <Wrapper
       style={{ transform: "translate3d(0, 0, 0)" }}
@@ -191,7 +195,17 @@ const Slider = ({
       bgColor={bgColor}
     >
       {data.map(({ ...props }, index) => {
-        return <ProjectItem {...props} index={index} key={index} />;
+        return (
+          <ProjectItem
+            {...props}
+            showButton={showButton}
+            buttonHref={buttonHref}
+            buttonTarget={buttonTarget}
+            buttonText={buttonText}
+            index={index}
+            key={index}
+          />
+        );
       })}
     </Wrapper>
   );

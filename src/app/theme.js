@@ -29,7 +29,7 @@ const fonts = {
 const colors = {
   backgroundColor: "#09091f",
   textColor: "#fff",
-  accentColor: "rgb(6, 170, 245)",
+  accentColor: "#06aaf5",
 };
 
 export const theme = {

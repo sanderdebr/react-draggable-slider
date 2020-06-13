@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 
 const ButtonContent = ({ children }) => {
-  return <>{children && <ButtonText>{children}</ButtonText>}</>;
+  return <Fragment>{children && <ButtonText>{children}</ButtonText>}</Fragment>;
 };
 
 export const LinkButton = (props) => {
@@ -57,7 +57,7 @@ const ButtonContainer = styled.button`
     position: absolute;
     width: 46px;
     height: 46px;
-    background: ${(props) => props.theme.accentColor};
+    background-color: ${(props) => props.theme.accentColor};
     border-radius: 40px;
     left: 0px;
     z-index: -1;
