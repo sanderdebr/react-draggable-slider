@@ -12,6 +12,18 @@
 npm install react-draggable-slider --save-dev
 ```
 
+### Demo
+
+https://sanderdebr.github.io/react-draggable-slider/
+
+<iframe
+     src="https://codesandbox.io/embed/agitated-christian-rlg5j?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="agitated-christian-rlg5j"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-autoplay allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 ## Usage
 
 Add `<Slider />` component with sliderSettings object, the only required setting an array of slider items.
@@ -72,7 +84,3 @@ The sliderSettings prop in `<Slider sliderSettings={sliderSettings} />` componen
 - React Spring
 - GSAP
 - Styled Components
-
-### Demo
-
-https://sanderdebr.github.io/react-draggable-slider/
