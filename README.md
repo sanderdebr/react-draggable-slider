@@ -16,6 +16,7 @@ Add `<Slider />` component with sliderSettings object, the only required setting
 
 ```jsx
 import { Slider } from "react-draggable-slider";
+import { projectList } from "./data";
 
 function App() {
   const sliderSettings = {
