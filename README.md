@@ -2,8 +2,6 @@
 
 ![GitHub](https://img.shields.io/github/license/dbismut/react-soft-slider)
 
-[![Edit agitated-christian-rlg5j](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/agitated-christian-rlg5j?fontsize=14&hidenavigation=1&theme=dark)
-
 <p align="left">NPM package for my custom Draggable React Slider using React Spring and GSAP.</p>
 
 ## Installation
@@ -16,9 +14,7 @@ npm install react-draggable-slider --save-dev
 
 https://sanderdebr.github.io/react-draggable-slider/
 
-https://codesandbox.io/embed/agitated-christian-rlg5j?fontsize=14&hidenavigation=1&theme=dark
-
-https://codesandbox.io/s/agitated-christian-rlg5j?fontsize=14&hidenavigation=1&theme=dark
+[![Edit agitated-christian-rlg5j](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/agitated-christian-rlg5j?fontsize=14&hidenavigation=1&theme=dark)
 
 ## Usage
 
