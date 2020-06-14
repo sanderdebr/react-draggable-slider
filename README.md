@@ -28,7 +28,7 @@ function App() {
     buttonText: "View project",
     showButton: true,
   };
-  return <App sliderSettings={sliderSettings} />;
+  return <Slider sliderSettings={sliderSettings} />;
 }
 ```
 
