@@ -15,7 +15,7 @@ npm install react-draggable-slider --save-dev
 Add `<Slider />` component with sliderSettings object, the only required setting an array of slider items.
 
 ```jsx
-import { Slider } from "react-soft-slider";
+import { Slider } from "react-draggable-slider";
 
 function App() {
   const sliderSettings = {
