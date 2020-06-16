@@ -10,12 +10,19 @@
 npm install react-draggable-slider --save-dev
 ```
 
+### Demo
+
+https://sanderdebr.github.io/react-draggable-slider/
+
+[![Edit agitated-christian-rlg5j](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/agitated-christian-rlg5j?fontsize=14&hidenavigation=1&theme=dark)
+
 ## Usage
 
 Add `<Slider />` component with sliderSettings object, the only required setting an array of slider items.
 
 ```jsx
-import { Slider } from "react-soft-slider";
+import { Slider } from "react-draggable-slider";
+import { projectList } from "./data";
 
 function App() {
   const sliderSettings = {
@@ -28,7 +35,7 @@ function App() {
     buttonText: "View project",
     showButton: true,
   };
-  return <App sliderSettings={sliderSettings} />;
+  return <Slider sliderSettings={sliderSettings} />;
 }
 ```
 
@@ -69,7 +76,3 @@ The sliderSettings prop in `<Slider sliderSettings={sliderSettings} />` componen
 - React Spring
 - GSAP
 - Styled Components
-
-### Demo
-
-https://sanderdebr.github.io/react-draggable-slider/
