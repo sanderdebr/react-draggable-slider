@@ -1,6 +1,7 @@
 # react-draggable-slider
 
-![GitHub](https://img.shields.io/github/license/dbismut/react-soft-slider)
+![GitHub](https://img.shields.io/github/license/dbismut/react-soft-slider) 
+[![NPM Downloads](https://img.shields.io/npm/react-draggable-slider/express.svg?style=flat)]()  
 
 <p align="left">NPM package for my custom Draggable React Slider using React Spring and GSAP.</p>
 
