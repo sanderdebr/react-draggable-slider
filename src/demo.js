@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
-import App from "./";
+import Slider from "./components/Slider";
 import Cursor from "./components/Cursor";
 import { theme } from "./app/theme";
 import { GlobalStyles } from "./app/styles";
@@ -12,8 +12,8 @@ import { projectList } from "./app/data";
 
 const sliderSettings = {
   data: projectList,
-  speed: 3000,
-  easing: "elastic",
+  speed: 1200,
+  easing: "expo",
   bgColor: "rgba(255, 255, 255, 0.05)",
   buttonHref: "https://www.google.com",
   buttonTarget: "_self",
@@ -21,12 +21,23 @@ const sliderSettings = {
   showButton: true,
 };
 
+const Wrapper = styled.section`
+  width: auto;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+
 ReactDOM.render(
   <Fragment>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       {!isEdge && <Cursor />}
-      <App sliderSettings={sliderSettings} />
+      <Wrapper id="projects">
+        <Slider sliderSettings={sliderSettings} />
+      </Wrapper>
     </ThemeProvider>
   </Fragment>,
   document.getElementById("root")
