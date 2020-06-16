@@ -4,6 +4,8 @@
 
 <p align="left">NPM package for my custom Draggable React Slider using React Spring and GSAP.</p>
 
+![gif](https://giphy.com/embed/gKNT6B5MkMnp4sHMiT)
+
 ## Installation
 
 ```
