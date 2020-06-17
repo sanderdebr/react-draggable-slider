@@ -7,6 +7,8 @@
 
 ![gif](https://media.giphy.com/media/gKNT6B5MkMnp4sHMiT/giphy.gif)
 
+![gif](https://media.giphy.com/media/jmwmKtZR553jULsnCR/giphy.gif)
+
 ## Installation
 
 ```
