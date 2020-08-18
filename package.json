@@ -1,7 +1,7 @@
 {
-  "name": "react-draggable-slider",
+  "name": "custom-react-draggable-slider",
   "version": "1.0.0",
-  "description": "Smooth draggable React slider for project items using Spring and GSAP",
+  "description": "Smooth draggable React slider for project items using Spring and GSAP edited",
   "main": "dist/bundle.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sanderdebr/react-draggable-slider.git"
+    "url": "git+https://github.com/RoderickCardenas/custom-react-draggable-slider.git"
   },
   "keywords": [
     "react",
@@ -21,12 +21,12 @@
     "gsap",
     "spring"
   ],
-  "author": "Sander de Bruijn",
+  "author": "Roderick Cardenas",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sanderdebr/react-draggable-slider/issues"
+    "url": "https://github.com/RoderickCardenas/custom-react-draggable-slider/issues"
   },
-  "homepage": "https://github.com/sanderdebr/react-draggable-slider#readme",
+  "homepage": "https://github.com/RoderickCardenas/custom-react-draggable-slider#readme",
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
