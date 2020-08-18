@@ -1,16 +1,55 @@
 {
-  "name": "custom-react-draggable-slider",
-  "version": "1.0.0",
-  "description": "Smooth draggable React slider for project items using Spring and GSAP edited",
-  "main": "dist/bundle.js",
-  "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
-  },
-  "repository": {
+  "_from": "git+https://github.com/RoderickCardenas/custom-react-draggable-slider.git",
+  "_id": "custom-react-draggable-slider@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/custom-react-draggable-slider",
+  "_phantomChildren": {},
+  "_requested": {
     "type": "git",
-    "url": "git+https://github.com/RoderickCardenas/custom-react-draggable-slider.git"
+    "raw": "https://github.com/RoderickCardenas/custom-react-draggable-slider",
+    "rawSpec": "https://github.com/RoderickCardenas/custom-react-draggable-slider",
+    "saveSpec": "git+https://github.com/RoderickCardenas/custom-react-draggable-slider.git",
+    "fetchSpec": "https://github.com/RoderickCardenas/custom-react-draggable-slider.git",
+    "gitCommittish": null
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/RoderickCardenas/custom-react-draggable-slider.git#3b596933f2ca558161233443191e108f12314851",
+  "_spec": "https://github.com/RoderickCardenas/custom-react-draggable-slider",
+  "_where": "/Users/rod/Documents/GitHub/web-build-gatsby",
+  "author": {
+    "name": "Roderick Cardenas"
+  },
+  "bugs": {
+    "url": "https://github.com/RoderickCardenas/custom-react-draggable-slider/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Smooth draggable React slider for project items using Spring and GSAP edited",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^3.5.1",
+    "gsap": "^3.3.1",
+    "path": "^0.12.7",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-spring": "^8.0.27",
+    "react-use-gesture": "^7.0.15",
+    "style-loader": "^1.1.3",
+    "styled-components": "^5.1.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^3.2.1"
+  },
+  "homepage": "https://github.com/RoderickCardenas/custom-react-draggable-slider#readme",
   "keywords": [
     "react",
     "slider",
@@ -21,33 +60,20 @@
     "gsap",
     "spring"
   ],
-  "author": "Roderick Cardenas",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/RoderickCardenas/custom-react-draggable-slider/issues"
+  "main": "/lib/slider.js",
+  "name": "custom-react-draggable-slider",
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
-  "homepage": "https://github.com/RoderickCardenas/custom-react-draggable-slider#readme",
-  "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
-    "@babel/preset-react": "^7.10.1",
-    "babel-loader": "^8.1.0",
-    "gh-pages": "^3.0.0",
-    "gsap": "^3.3.1",
-    "html-loader": "^1.1.0",
-    "html-webpack-plugin": "^4.3.0",
-    "react-spring": "^8.0.27",
-    "react-use-gesture": "^7.0.15",
-    "styled-components": "^5.1.1",
-    "webpack": "^4.43.0",
-    "webpack-bundle-analyzer": "^3.8.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoderickCardenas/custom-react-draggable-slider.git"
   },
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "prop-types": "^15.7.2"
-  }
+  "scripts": {
+    "build": "webpack"
+  },
+  "version": "1.0.0"
 }
